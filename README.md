@@ -1,4 +1,4 @@
-# 🍽️ Meal Planner — Multimodal MCP Agent with FastMCP
+# 🍽️ MealPlanner MCP Multi-Agent
 
 A **multimodal meal planning agent** built using [FastMCP](https://gofastmcp.com/) (Model Context Protocol). It demonstrates how to build an MCP server with **image analysis** (via Google Gemini Vision), **tools**, **resources**, and **prompts**.
 

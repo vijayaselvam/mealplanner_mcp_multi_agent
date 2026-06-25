@@ -1,5 +1,5 @@
 [project]
-name = "meal-planner-mcp"
+name = "mealplanner-mcp-multi-agent"
 version = "0.1.0"
 description = "Multimodal Meal Planner Agent using FastMCP (Model Context Protocol)"
 requires-python = ">=3.14"
