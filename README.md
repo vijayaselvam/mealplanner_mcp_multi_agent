@@ -460,7 +460,7 @@ The client formats all JSON responses into a **user-friendly terminal output** w
 ## 📁 Project Structure
 
 ```
-MultiAgent_exercise/
+mealplanner_mcp_multi_agent/
 ├── server.py          # MCP Server — tools, resources, prompts
 ├── client.py          # MCP Client — demo script (connects via HTTP)
 ├── pyproject.toml     # Project config & dependencies (uv)

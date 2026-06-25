@@ -228,4 +228,12 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    asyncio.run(main(image_path=args.image, server_url=args.url))
+    if not args.url:
+        logging.error("Server URL is missing. Please provide a valid server URL using --url.")
+        sys.exit(1)
+
+    try:
+        asyncio.run(main(image_path=args.image, server_url=args.url))
+    except Exception as e:
+        logging.error(f"Failed to connect to the server or execute the client. Is the server running? Error: {e}")
+        sys.exit(1)
