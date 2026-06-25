@@ -470,61 +470,32 @@ mealplanner_mcp_multi_agent/
 └── README.md          # This file
 ```
 
-## 🚀 Setup
+## 🚀 Setup & Docker Deployment
 
-### 1. Install uv (if not already installed)
+The easiest way to run the MCP server is via Docker!
 
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-```
-
-### 2. Install dependencies
-
-```bash
-uv sync
-```
-
-This creates a `.venv` virtual environment and installs all dependencies from `pyproject.toml`.
-
-### 3. Get a Google Gemini API key
-
-- Visit [Google AI Studio](https://aistudio.google.com/apikey)
-- Create a free API key
-- Copy `.env.example` to `.env` and paste your key:
-
+### 1. Configure Environment
 ```bash
 cp .env.example .env
-# Edit .env and add your GOOGLE_API_KEY
+# Edit .env and add your GOOGLE_API_KEY and desired GEMINI_MODEL
 ```
 
-### 4. Start the MCP Server (Terminal 1)
-
+### 2. Start the Server (Docker)
 ```bash
-uv run python3 server.py
+docker build -t mealplanner-mcp .
+docker run -p 8000:8000 --rm --env-file .env mealplanner-mcp --transport streamable-http --host 0.0.0.0
 ```
 
-The server starts at `http://127.0.0.1:8000/mcp` using **Streamable HTTP** transport.
-
-### 5. Run the Client (Terminal 2)
-
+### 3. Run the Client (New Terminal)
 ```bash
 # Demo mode (uses sample ingredients)
 uv run python3 client.py
 
 # With a real fridge photo (multimodal!)
 uv run python3 client.py --image path/to/fridge_photo.jpg
-
-# Connect to a custom server URL
-uv run python3 client.py --url http://your-server:8000/mcp
 ```
 
-### 6. Test with MCP Inspector
-
-```bash
-uv run fastmcp dev server.py
-```
-
-This opens a web UI where you can interactively test all tools, resources, and prompts.
+*(For a more detailed deployment breakdown, see [DEPLOYMENT.md](DEPLOYMENT.md))*
 
 ## 🔧 MCP Concepts Demonstrated
 
