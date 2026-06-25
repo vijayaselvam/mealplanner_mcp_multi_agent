@@ -39,7 +39,7 @@ if not GOOGLE_API_KEY:
     )
 
 gemini_client = genai.Client(api_key=GOOGLE_API_KEY)
-GEMINI_MODEL = "gemini-2.0-flash-lite"
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash") 
 
 mcp = FastMCP(
     "MealPlanner",
