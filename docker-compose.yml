@@ -4,6 +4,7 @@ services:
     build: .
     environment:
       - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GEMINI_MODEL=${GEMINI_MODEL}
     # For SSE transport (if supported/configured in your server) you'd map ports:
     # ports:
     #   - "8000:8000"
