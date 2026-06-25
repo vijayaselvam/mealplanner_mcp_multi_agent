@@ -641,7 +641,7 @@ wheels = [
 ]
 
 [[package]]
-name = "meal-planner-mcp"
+name = "mealplanner-mcp-multi-agent"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
