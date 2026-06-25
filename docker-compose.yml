@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  mcp-server:
+    build: .
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+    # For SSE transport (if supported/configured in your server) you'd map ports:
+    # ports:
+    #   - "8000:8000"
+    # command: ["uv", "run", "fastmcp", "run", "server.py", "--transport", "sse"]
+
+    # For stdio transport (default), you typically run the container interactively:
+    # docker-compose run -i mcp-server
